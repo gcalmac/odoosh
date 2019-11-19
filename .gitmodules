@@ -1,0 +1,3 @@
+[submodule "archeti/almac"]
+	path = archeti/almac
+	url = git@gitlab.com:archeti/almac.git
