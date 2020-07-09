@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="language_selector_dropdown" name="Language Dropdown in Header">
+        <span class="dropdown js_language_selector pull-right" t-if="(request and request.is_frontend_multilang and len(languages) &gt; 1) or (website and (editable or translatable))">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="fa fa-language" aria-hidden="true"/>
+                  <!-- <span t-esc="request.env.context"/> -->
+                  <span t-esc="list(filter(lambda lg : lg[0] == lang, languages))[0][2].split('/').pop()"/>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                  <li t-foreach="languages" t-as="lg">
+                    <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang_code=lg[0])"
+                           class="dropdown-item js_change_lang"
+                           t-att-data-url_code="lg[1]">
+                        <t t-esc="lg[2].split('/').pop()"/>
+                    </a>
+                  </li>
+                  <li groups="website.group_website_publisher">
+                      <t t-set="url_return" t-value="url_for('', '[lang]') + '?' + keep_query()"/>
+                      <a t-attf-href="/web#action=base.action_view_base_language_install&amp;website_id=#{website.id if website else ''}&amp;url_return=#{url_return}">
+                          <i class="fa fa-plus-circle"/>
+                          Add a language...
+                      </a>
+                  </li>
+              </ul>
+          </span>
+    </template>
+
+    <template id="almac_imports_project_assets" inherit_id="website.assets_frontend" name="Collapse Product Attributes JS">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/almac_imports_project/static/src/css/almac_navbar.css" />
+            <script type="text/javascript" src="/almac_imports_project/static/src/js/attribute_collapse.js"></script>
+        </xpath>
+    </template>
+
+    <template id="almac_imports_product_offer_section" inherit_id="website_sale.product" name="Product Price-list Offer Section ">
+        <xpath expr="//*[@id='product_full_description']" position="before">
+            <t t-foreach="product.x_pricelist_offer_ids" t-as="offer">
+                <t t-if="website.get_current_pricelist().id == offer.x_name.id">
+                    <div itemprop="product_offer_section" t-field="offer.x_offer" class="oe_structure mt16" id="product_offer_section"/>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-set='single_value_attributes']" position="replace">
+        </xpath>
+        <xpath expr="//span[@t-field='ptal.product_template_value_ids._only_active().name']" position="replace">
+        </xpath>
+    </template>
+
+    <template id="website_sale_products_inherit_almac_imports_project" inherit_id="website_sale.products_attributes" name="Specific Attributes Only" priority="99">
+        <xpath expr="//div[@id='wsale_products_attributes_collapse']/form//ul" position="attributes">
+            <attribute name="id">o_shop_collapse_attribute</attribute>
+        </xpath>
+        <xpath expr="//div[@id='wsale_products_attributes_collapse']/form[hasclass('js_attributes')]//li[hasclass('nav-item')]//strong[@t-field='a.name']" position="before">
+            <i t-if="a.value_ids and a.display_type == 'radio'" class="text-primary fa fa-chevron-right"/>
+            <!-- <t t-set="hide_color" t-value="True if a.display_type == 'color' and category and category.x_attrib_value_ids and len(category.x_attrib_value_ids) &gt; 0 else False"/> -->
+        </xpath>
+        <xpath expr="//div[@id='wsale_products_attributes_collapse']/form//strong[@t-field='a.name']/.." position="attributes">
+            <attribute name="t-if">a.x_website_hidden != True and hide_color != True</attribute>
+        </xpath>
+        <xpath expr="//div[@id='wsale_products_attributes_collapse']/form//ul//li[@t-if='a.value_ids and len(a.value_ids) &gt; 1']//t[2]" position="attributes">
+            <attribute name="t-if">a.display_type == 'radio' and a.x_website_hidden != True</attribute>
+        </xpath>
+        <xpath expr="//div[@id='wsale_products_attributes_collapse']/form//ul//li[@t-if='a.value_ids and len(a.value_ids) &gt; 1']//t[2]/ul" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+        <xpath expr="//div[@id='wsale_products_attributes_collapse']/form//ul//li[@t-if='a.value_ids and len(a.value_ids) &gt; 1']//t[3]" position="replace">
+            <t t-if="a.display_type == 'color' and category">
+                <t t-set="colors" t-value="category.x_attrib_value_ids.mapped('html_color')"/>
+                <t t-foreach="a.value_ids.filtered(lambda a:a.html_color in colors)" t-as="v">
+                    <label t-attf-style="background-color:#{v.html_color or v.name}" t-attf-class="css_attribute_color #{'active' if v.id in attrib_set else ''}">
+                        <input type="checkbox" name="attrib" t-att-value="'%s-%s' % (a.id,v.id)" t-att-checked="'checked' if v.id in attrib_set else None" t-att-title="v.name" />
+                    </label>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="product_inherit_shop_keywords" inherit_id="website_sale.product" name="Shop Keywords/Product Quantity on products">
+        <xpath expr="//div[@id='product_details']//form//ul[hasclass('js_add_cart_variants')]" position="before">
+            <t t-set="qty_attribute_value_ids" t-value="['%s-%s' % (variant.sudo().id, variant.sudo().x_kit_prod_qty) for variant in product.sudo().product_variant_ids]" />
+        </xpath>
+        <xpath expr="//div[@id='product_details']//form//ul[hasclass('js_add_cart_variants')]" position="attributes">
+            <attribute name="t-att-data-qty_attribute_value_ids">qty_attribute_value_ids</attribute>
+        </xpath>
+        <xpath expr="//div[@id='product_details']//t[@t-call='website_sale.product_price']" position="after">
+            <div id="qty_container">
+            </div>
+            <div id="fr_out_of_stock" class="hidden">
+                <p class="text-muted"><span>Disponibilité : Épuisé</span></p>
+            </div>
+            <div class="product_offers">
+                <t t-if="product.x_product_kwrds and len(product.product_variant_ids) == 1">
+                    <span t-raw="product.x_product_kwrds"/>
+                </t>
+                <t t-if="len(product.product_variant_ids) &gt; 1">
+                    <span t-raw="product.product_variant_id.x_variant_kwrds"/>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="avantgarde_header_inherit" inherit_id="website.layout">
+        <xpath expr="//t[@t-call='website.language_selector']" position="replace">
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']/header" position="before">
+            <div id="pre-header" class="clearfix">
+                <!-- <span class="h5 year"><t t-esc="time.strftime('%Y')"/></span>
+                <h5 class="pre-header-text o_default_snippet_text h5 mb0">Add your custom text here</h5> -->
+                <!-- <span class="pre-header-links h5 text-right">
+                    <a t-att-href="website.social_facebook" t-if="website.social_facebook"><i class="fa fa-facebook"/></a>
+                    <a t-att-href="website.social_twitter" t-if="website.social_twitter"><i class="fa fa-twitter"/></a>
+                    <a t-att-href="website.social_linkedin" t-if="website.social_linkedin"><i class="fa fa-linkedin"/></a>
+                    <a t-att-href="website.social_youtube" t-if="website.social_youtube"><i class="fa fa-youtube-play"/></a>
+                    <a t-att-href="website.social_github" t-if="website.social_github"><i class="fa fa-github"/></a>
+                    <a t-attf-href="mailto:#{res_company.email}" t-if="res_company.email"><i class="fa fa-envelope"/></a>
+                </span> -->
+                <div class="info">
+                    <span class="pull-right">
+                        <a href="mailto:sales@almacltd.com">sales@almacltd.com</a><a>(844) 922 5622</a>
+                    </span>
+                    <t t-call="almac_imports_project.language_selector_dropdown"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+            <attribute name="id">avant_header</attribute>
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']/header//button[@data-target='#top_menu_collapse']" position="attributes">
+            <attribute name="class">navbar-toggler collapsed</attribute>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_get_varian_offers" model="ir.actions.server">
+        <field name="name">get variant offers</field>
+        <field name="model_id" ref="website.model_website"/>
+        <field name="state">code</field>
+        <field name="website_published">True</field>
+        <field name="website_path">get_variant_offers</field>
+        <field name="code"><![CDATA[
+product_id = request.params.get('product_id', False)
+headers = [('Content-Type', 'text/plain')]
+if product_id:
+    product_obj = env['product.product'].sudo().browse(int(product_id))
+    product_kwrds = product_obj.x_variant_kwrds
+    if product_kwrds == '<p><br></p><p><br></p>' or product_kwrds == False:
+        product_kwrds = product_obj.product_tmpl_id.x_product_kwrds
+    response = request.make_response(product_kwrds if product_kwrds else '', headers=headers)
+else:
+    response = request.make_response('', headers=headers)
+]]>
+        </field>
+    </record>
+</odoo>

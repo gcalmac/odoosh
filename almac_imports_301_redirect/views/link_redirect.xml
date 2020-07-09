@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_almac_301_link_redirect_form" model="ir.ui.view">
+        <field name="name">link.redirect.form</field>
+        <field name="model">link.redirect</field>
+        <field name="arch" type="xml">
+            <form string="Link Redirect">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Url Title"/>
+                        <h1><field name="name" placeholder="Url Title" required="True"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="old_link"/>
+                            <field name="current_link"
+                                attrs="{'invisible': [('res_model', '!=', False), ('res_id', '!=', False)], 'required': [('reocrd_id', '=', False)]}"/>
+                        </group>
+                        <group attrs="{'invisible': [('current_link', '!=', False)]}">
+                            <field name="res_model"/>
+                            <field name="res_id"/>
+                            <field name="reocrd_id" readonly="1" widget="url"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_almac_301_link_redirect_tree" model="ir.ui.view">
+        <field name="name">link.redirect.tree</field>
+        <field name="model">link.redirect</field>
+        <field name="arch" type="xml">
+            <tree string="Link Redirect">
+                <field name="name"/>
+                <field name="old_link"/>
+                <field name="current_link"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_almac_301_link_redirect_search" model="ir.ui.view">
+        <field name="name">link.redirect.search</field>
+        <field name="model">link.redirect</field>
+        <field name="arch" type="xml">
+            <search string="Link Redirect">
+                <field name="name"/>
+                <field name="old_link"/>
+                <field name="current_link"/>
+                <field name="active"/>
+                <separator/>
+                <filter string="Archived" domain="[('active','=',False)]" name="archive"/>
+                <filter string="Active" domain="[('active','=',True)]" name="unarchive"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_almac_301_redirect_url" model="ir.actions.act_window">
+        <field name="name">URL Mapping</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">link.redirect</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_unarchive': 1}</field>
+    </record>
+
+    <menuitem id="menu_almac_301_redirect_url"
+        parent="website.menu_website_configuration"
+        action="action_almac_301_redirect_url"/>
+
+</odoo>

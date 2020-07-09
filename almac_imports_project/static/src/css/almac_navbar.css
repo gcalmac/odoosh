@@ -1,0 +1,19 @@
+header.top_menu_affix .navbar-static-top {
+    z-index: auto !important;
+}
+#pre-header span.pull-right,
+#pre-header span.pull-right a {
+    margin-right: 10px;
+}
+
+div.info {
+    width: 100% !important;
+}
+
+#wrapwrap #pre-header  {
+        display: inherit !important;
+}
+
+#wrapwrap #avant_header {
+    display: block !important;
+}

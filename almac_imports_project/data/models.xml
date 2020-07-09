@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="x_pricelist_offer" model="ir.model">
+            <field name="name">Product Pricelit Offer</field>
+            <field name="model">x_pricelist.offer</field>
+            <field name="state">manual</field>
+            <field name="info">Product Pricelit Offer</field>
+        </record>
+
+        <!-- <record id="avantgarde_header1" model="ir.model.data">
+            <field name="name">avantgarde_header1</field>
+            <field name="model">theme.ir.ui.view</field>
+            <field name="module">theme_avantgarde</field>
+            <field name="res_id" eval="ref('theme_avantgarde.avantgarde_header')"></field>
+        </record> -->
+
+    </data>
+</odoo>

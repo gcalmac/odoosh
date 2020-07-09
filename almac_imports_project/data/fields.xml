@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="x_hide_in_website" model="ir.model.fields">
+            <field name="name">x_website_hidden</field>
+            <field name="field_description">Hide in website?</field>
+            <field name="model_id" ref="product.model_product_attribute"/>
+            <field name="ttype">boolean</field>
+            <field name="state">manual</field>
+        </record>
+<!--
+        <record id="product_template_x_price_range" model="ir.model.fields">
+            <field name="name">x_price_range</field>
+            <field name="field_description">Price Price</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="ttype">char</field>
+            <field name="compute"><![CDATA[for template in self:
+    pricelist_id_or_name = self.env.context.get('pricelist')
+    if template.product_variant_ids and pricelist_id_or_name:
+        pricelist = None
+        partner = self.env.context.get('partner', False)
+        # Support context pricelists specified as display_name or ID for compatibility
+        if isinstance(pricelist_id_or_name, str):
+            pricelist_name_search = self.env['product.pricelist'].name_search(pricelist_id_or_name, operator='=', limit=1)
+            if pricelist_name_search:
+                pricelist = self.env['product.pricelist'].browse([pricelist_name_search[0][0]])
+        elif isinstance(pricelist_id_or_name, (int, long)):
+            pricelist = self.env['product.pricelist'].browse(pricelist_id_or_name)
+        prices = []
+        for product in template.product_variant_ids:
+            if pricelist:
+                #two call because pricelist as code that see verything by product.id :(
+                prices.append(pricelist.get_product_price(product, 1.0, partner))
+                prices.append(pricelist.get_product_price(product, 10000.0, partner))
+        min_price, max_price = min(prices), max(prices)
+        template['x_price_range'] = "%.2f - %.2f"%(min_price, max_price) if min_price != max_price  else "%.2f"%(min_price)
+    else:
+        template['x_price_range'] = "%.2f"%(template.list_price)
+                ]]></field>
+            <field name="store">False</field>
+            <field name="state">manual</field>
+        </record>
+ -->
+        <record id="x_min_rate" model="ir.model.fields">
+            <field name="name">x_min_rate</field>
+            <field name="field_description">Min Price</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="ttype">float</field>
+            <field name="compute"><![CDATA[for template in self:
+    pricelist_id_or_name = self.env.context.get('pricelist')
+    if template.product_variant_ids and pricelist_id_or_name:
+        pricelist = None
+        partner = self.env.context.get('partner', False)
+        if isinstance(pricelist_id_or_name, (int)):
+            pricelist = self.env['product.pricelist'].browse(pricelist_id_or_name)
+        prices = []
+        for product in template.product_variant_ids:
+            if pricelist:
+                #not goood idea but best way to get min rate of all varaints
+                prices.append(pricelist.get_product_price(product, 1.0, partner))
+                prices.append(pricelist.get_product_price(product, 10000.0, partner))
+        template['x_min_rate'] = min(prices)
+    else:
+        template['x_min_rate'] = template.list_price
+                ]]></field>
+            <field name="store">False</field>
+            <field name="state">manual</field>
+        </record>
+
+
+        <record id="x_max_rate" model="ir.model.fields">
+            <field name="name">x_max_rate</field>
+            <field name="field_description">Max Price</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="ttype">float</field>
+            <field name="compute"><![CDATA[for template in self:
+    pricelist_id_or_name = self.env.context.get('pricelist')
+    if template.product_variant_ids and pricelist_id_or_name:
+        pricelist = None
+        partner = self.env.context.get('partner', False)
+        if isinstance(pricelist_id_or_name, (int)):
+            pricelist = self.env['product.pricelist'].browse(pricelist_id_or_name)
+        prices = []
+        for product in template.product_variant_ids:
+            if pricelist:
+                #not goood idea but best way to get min rate of all varaints
+                prices.append(pricelist.get_product_price(product, 1.0, partner))
+                prices.append(pricelist.get_product_price(product, 10000.0, partner))
+        template['x_max_rate'] = max(prices)
+    else:
+        template['x_max_rate'] = template.list_price
+                ]]></field>
+            <field name="store">False</field>
+            <field name="state">manual</field>
+        </record>
+        <record id="x_product_kwrds" model="ir.model.fields">
+            <field name="name">x_product_kwrds</field>
+            <field name="field_description">Shop Keywords</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="ttype">html</field>
+            <field name="translate">True</field>
+            <field name="state">manual</field>
+        </record>
+        <record id="x_product_var_kwrds" model="ir.model.fields">
+            <field name="name">x_variant_kwrds</field>
+            <field name="field_description">Shop Keywords</field>
+            <field name="model_id" ref="product.model_product_product"/>
+            <field name="ttype">html</field>
+            <field name="translate">True</field>
+            <field name="state">manual</field>
+        </record>
+        <record id="x_kit_template_qty" model="ir.model.fields">
+            <field name="name">x_kit_qty</field>
+            <field name="field_description">Kit Quantity</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="ttype">float</field>
+            <field name="compute"><![CDATA[
+for prod in self:
+    if prod.bom_ids and prod.type=='product':
+        min_qty = []
+        for bom in prod.bom_ids:
+            for line in bom.bom_line_ids:
+                if line.product_id.type == 'product':
+                    min_qty.append(line.product_id.x_kit_prod_qty / line.product_qty)
+        else:
+            prod['x_kit_qty'] = min_qty and prod.qty_available + min(min_qty) or prod.qty_available
+    else:
+        prod['x_kit_qty'] = prod.qty_available
+                ]]></field>
+            <field name="store">False</field>
+            <field name="state">manual</field>
+        </record>
+        <record id="x_kit_product_qty" model="ir.model.fields">
+            <field name="name">x_kit_prod_qty</field>
+            <field name="field_description">Kit Quantity</field>
+            <field name="model_id" ref="product.model_product_product"/>
+            <field name="ttype">float</field>
+            <field name="compute"><![CDATA[
+for prod in self:
+    if prod.bom_ids and prod.type=='product':
+        min_qty = []
+        for bom in prod.bom_ids:
+            for line in bom.bom_line_ids:
+                if line.product_id.type == 'product':
+                    min_qty.append(line.product_id.x_kit_prod_qty / line.product_qty)
+        else:
+            prod['x_kit_prod_qty'] = min_qty and prod.qty_available + min(min_qty) or prod.qty_available
+    else:
+        prod['x_kit_prod_qty'] = prod.qty_available
+                ]]></field>
+            <field name="store">False</field>
+            <field name="state">manual</field>
+        </record>
+
+        <!-- Product Pricelist Offer Fieldes -->
+        <record id="x_pricelist_offer_x_name" model="ir.model.fields">
+            <field name="name">x_name</field>
+            <field name="field_description">Pricelist</field>
+            <field name="model_id" ref="almac_imports_project.x_pricelist_offer" />
+            <field name="ttype">many2one</field>
+            <field name="relation">product.pricelist</field>
+            <field name="required">True</field>
+            <field name="state">manual</field>
+            <field name="on_delete">cascade</field>
+        </record>
+        <record id="x_pricelist_offer_x_product_tmpl_id" model="ir.model.fields">
+            <field name="name">x_product_tmpl_id</field>
+            <field name="field_description">Product Template</field>
+            <field name="model_id" ref="almac_imports_project.x_pricelist_offer" />
+            <field name="ttype">many2one</field>
+            <field name="relation">product.template</field>
+            <field name="required">True</field>
+            <field name="state">manual</field>
+            <field name="on_delete">cascade</field>
+        </record>
+
+        <record id="x_pricelist_offer_x_offer" model="ir.model.fields">
+            <field name="name">x_offer</field>
+            <field name="field_description">Offer Website Description</field>
+            <field name="model_id" ref="almac_imports_project.x_pricelist_offer" />
+            <field name="ttype">html</field>
+            <field name="required">True</field>
+            <field name="translate">True</field>
+            <field name="state">manual</field>
+        </record>
+
+        <!-- product template offers -->
+        <record id="product_template_x_pricelist_offer" model="ir.model.fields">
+            <field name="name">x_pricelist_offer_ids</field>
+            <field name="field_description">Spec Values</field>
+            <field name="model_id" ref="product.model_product_template" />
+            <field name="ttype">one2many</field>
+            <field name="relation">x_pricelist.offer</field>
+            <field name="relation_field">x_product_tmpl_id</field>
+            <field name="state">manual</field>
+        </record>
+    </data>
+    <data  noupdate="1">
+        <record id="x_product_public_category_ids" model="ir.model.fields">
+            <field name="name">x_category_ids</field>
+            <field name="field_description">Website Categories</field>
+            <field name="ttype">many2many</field>
+            <field name="relation">product.public.category</field>
+            <field name="model_id" ref="product.model_product_attribute_value"/>
+            <field name="state">manual</field>
+        </record>
+
+        <record id="x_attribute_value_ids" model="ir.model.fields">
+            <field name="name">x_attrib_value_ids</field>
+            <field name="field_description">Attribute Values</field>
+            <field name="ttype">many2many</field>
+            <field name="relation">product.attribute.value</field>
+            <field name="model_id" ref="website_sale.model_product_public_category"/>
+            <field name="state">manual</field>
+        </record>
+    </data>
+</odoo>

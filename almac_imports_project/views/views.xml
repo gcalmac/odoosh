@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_inherit_almac_imports_project" model="ir.ui.view">
+            <field name="name">product.template.form.inherit.almac_imports_project</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook//group[@name='group_standard_price']" position="inside">
+                    <field name="x_min_rate" readonly="True"/>
+                    <field name="x_max_rate" readonly="True"/>
+                </xpath>
+                <xpath expr="//field[@name='public_categ_ids']" position="after">
+                <!-- <xpath expr="//notebook//page[@name='sales']//field[@name='public_categ_ids']" position="after"> -->
+                    <field name="x_product_kwrds"/>
+                </xpath>
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page string="Pricelist Offers">
+                        <field name="x_pricelist_offer_ids" context="{'default_x_offer':'&lt;section class=&quot;s_image_text bg-gray-lighter&quot;&gt; &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;row&quot;&gt; &lt;div class=&quot;mt64 mb64 col-md-6&quot;&gt; &lt;h3&gt;Description&lt;/h3&gt; &lt;p&gt; Write one or two paragraphs describing your product, services or a specific feature. To be successful your content needs to be useful to your readers.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;mt64 mb0 col-md-4 col-md-offset-1&quot;&gt; &lt;h3&gt;&lt;font class=&quot;text-gray-dark&quot;&gt;Wholesale Pricing&lt;/font&gt;&lt;/h3&gt; &lt;p&gt;&lt;b&gt;&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;'}">
+                            <tree>
+                                <field name="x_name"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="x_name"/>
+                                </group>
+                                <field name="x_offer"/>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="product_form_inherit_almac_imports_project" model="ir.ui.view">
+            <field name="name">product.product.form.inherit.almac_imports_project</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook//group[@name='group_standard_price']" position="inside">
+                    <field name="x_min_rate" readonly="True"/>
+                    <field name="x_max_rate" readonly="True"/>
+                </xpath>
+                <xpath expr="//field[@name='public_categ_ids']" position="after">
+                <!-- <xpath expr="//notebook//page[@name='sales']//field[@name='public_categ_ids']" position="after"> -->
+                    <field name="x_variant_kwrds"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="product_attribute_form_inherit_almac_imports_project" model="ir.ui.view">
+            <field name="name">product.attribute.form.inherit.almac_imports_project</field>
+            <field name="model">product.attribute</field>
+            <field name="inherit_id" ref="product.product_attribute_view_form"/>
+            <field name="arch" type="xml">
+                <field name="create_variant" position="after">
+                    <field name="x_website_hidden"/>
+                </field>
+            </field>
+        </record>
+        <record id="product_attribute_tree_inherit_almac_imports_project" model="ir.ui.view">
+            <field name="name">product.attribute.tree.inherit.almac_imports_project</field>
+            <field name="model">product.attribute</field>
+            <field name="inherit_id" ref="product.attribute_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="create_variant" position="after">
+                    <field name="x_website_hidden"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_x_pricelist_offer_list" model="ir.ui.view">
+            <field name="name">View Product Pricelist Offers Tree Views</field>
+            <field name="model">x_pricelist.offer</field>
+            <field name="arch" type="xml">
+                <tree string="Product Pricelist Offers">
+                    <field name="x_name"/>
+                    <field name="x_product_tmpl_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_x_pricelist_offer_form" model="ir.ui.view">
+            <field name="name">View Product Pricelist Offers Form Views</field>
+            <field name="model">x_pricelist.offer</field>
+            <field name="arch" type="xml">
+                <form string="Product Pricelist Offer">
+                    <group>
+                        <field name="x_name"/>
+                        <field name="x_product_tmpl_id" required="True"/>
+                    </group>
+                    <field name="x_offer"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_public_category_form_inherit_almac_imports_project" model="ir.ui.view">
+            <field name="name">product.public.category.form.inherit.almac_imports_project</field>
+            <field name="model">product.public.category</field>
+            <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_left']" position="after">
+                    <group>
+                        <field name="x_attrib_value_ids"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <!-- <record id="attribute_value_tree_inherit_almac_imports_project" model="ir.ui.view">
+            <field name="name">attribute.value.tree.inherit.almac_imports_project</field>
+            <field name="model">product.attribute.value</field>
+            <field name="inherit_id" ref="product.variants_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="x_category_ids" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record> -->
+
+        <record id="action_view_x_pricelist_offer" model="ir.actions.act_window">
+            <field name="name">Products Pricelist Offers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">x_pricelist.offer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_x_offer': '&lt;section class=&quot;s_image_text bg-gray-lighter&quot;&gt; &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;row&quot;&gt; &lt;div class=&quot;mt64 mb64 col-md-6&quot;&gt; &lt;h3&gt;Description&lt;/h3&gt; &lt;p&gt; Write one or two paragraphs describing your product, services or a specific feature. To be successful your content needs to be useful to your readers.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;mt64 mb0 col-md-4 col-md-offset-1&quot;&gt; &lt;h3&gt;&lt;font class=&quot;text-gray-dark&quot;&gt;Wholesale Pricing&lt;/font&gt;&lt;/h3&gt; &lt;p&gt;&lt;b&gt;&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;'}</field>
+        </record>
+
+        <menuitem id="menu_sale_subscription_root"
+                  action="action_view_x_pricelist_offer"
+                  parent="sale.prod_config_main"/>
+
+    </data>
+</odoo>
