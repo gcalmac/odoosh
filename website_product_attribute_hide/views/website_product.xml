@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="inherite_products_attributes_item" inherit_id="website_sale.products_attributes" name="Specific Attributes Only">
+		<xpath expr="//form[@class='js_attributes mb-2']//ul" position="attributes">
+			<attribute name="id">o_shop_collapse_attribute</attribute>
+		</xpath>
+		
+		<xpath expr="//form[@class='js_attributes mb-2']//ul//li//div" position="replace">
+			<div>
+				<t t-if="a.website_hidden != True">
+					<i t-if="a.value_ids and a.display_type == 'radio'" class="text-primary fa fa-chevron-right"/>
+                	<strong class="o_shop_collapse_attribute_name" t-field="a.name"/>
+            	</t>
+            </div>
+		</xpath>
+		
+		<xpath expr="//form[@class='js_attributes mb-2']//ul//li[@t-if='a.value_ids and len(a.value_ids) &gt; 1']//t[2]" position="attributes">
+			<attribute name="t-if">a.display_type == 'radio' and a.website_hidden != True</attribute>
+		</xpath>
+		
+		<xpath expr="//form[@class='js_attributes mb-2']//ul//li[@t-if='a.value_ids and len(a.value_ids) &gt; 1']//t[2]/ul" position="attributes">
+			<attribute name="style">display:none;</attribute>
+		</xpath>
+		
+		<xpath expr="//form[@class='js_attributes mb-2']//ul//li[@t-if='a.value_ids and len(a.value_ids) &gt; 1']//t[3]" position="attributes">
+			<attribute name="t-if">a.display_type == 'color' and a.website_hidden != True</attribute>
+		</xpath>
+		
+	</template>
+</odoo>

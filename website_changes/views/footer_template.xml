@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="footer_custom" inherit_id="website.layout" name="Default" active="True">
+	    <xpath expr="//div[@id='footer']" position="replace">
+	        <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+	            <section class="s_text_block pt40 pb16" data-snippet="s_text_block" data-name="Text">
+	                <div class="container">
+	                    <div class="row">
+	                        <div class="col-lg-2 pt24 pb24">
+	                            <h4>Our Products &amp;amp; Services</h4>
+	                            <ul class="list-unstyled">
+	                                <li><a href="/">Home</a></li>
+	                            </ul>
+	                        </div>
+	                        <div id="connect" class="col-lg-4 offset-lg-1 pt24 pb24">
+	                            <h4 class="mb-3">Connect with us</h4>
+	                            <ul class="list-unstyled">
+	                                <li><i class="fa fa-comment fa-fw mr-2"/><span><a href="/contactus">Contact us</a></span></li>
+	                                <li><i class="fa fa-phone fa-fw mr-2"/><span class="o_force_ltr"><span t-field="res_company.phone"/></span></li>
+	                                <li><i class="fa fa-envelope fa-fw mr-2"/><span><span t-field="res_company.email"/></span></li>
+	                            </ul>
+	                            <div class="s_share text-left" data-name="Social Media">
+	                                <h5 class="s_share_title d-none">Follow us</h5>
+	                                <h2><a href="/website/social/facebook" class="s_share_facebook" target="_blank" t-if="website.social_facebook">
+	                                    <i class="fa fa-facebook-square"/>
+	                                </a></h2>
+	                                <h2><a href="/website/social/twitter" class="s_share_twitter" target="_blank" t-if="website.social_twitter">
+	                                    <i class="fa fa-twitter"/>
+	                                </a></h2>
+	                                <h2><a href="/website/social/linkedin" class="s_share_linkedin" target="_blank" t-if="website.social_linkedin">
+	                                    <i class="fa fa-linkedin"/>
+	                                </a></h2>
+	                                <h2><a href="/website/social/youtube" class="s_share_youtube" target="_blank" t-if="website.social_youtube">
+	                                    <i class="fa fa-youtube-play"/>
+	                                </a></h2>
+	                                <h2><a href="/website/social/github" class="s_share_github" target="_blank" t-if="website.social_github">
+	                                    <i class="fa fa-github"/>
+	                                </a></h2>
+	                            </div>
+	                        </div>
+	                        <div class="col-lg-5 pt24 pb24">
+	                            <h4>
+									<span t-field="res_company.name"/>
+									<small> - <a href="/page/about-us" data-original-title="" title="">About us</a></small>
+								</h4>
+	                            <div>
+									<p> Almac designs, manufactures and distributes wholesale baskets, boxes and packaging supplies. &amp;nbsp;Over the last 54 years, we have been delighting customers in the food-service, floral, gift basket and grocery industries. &amp;nbsp;</p>
+									<p> We take customer satisfaction seriously and maintain a 5 star rating on over 230 customer ratings on Trustpilot.com.</p>
+									<p><br/><span style="font-size: 18px;"><b>Get 10% off your first order</b></span><span style="font-size: 13px;"> </span>when you sign-up for our newsletter</p>
+									<div class="input-group js_subscribe hidden" data-list-id="4" data-subscribe="on" style="">
+										<input type="email" name="email" class="js_subscribe_email form-control" placeholder="your email..." disabled="disabled"/>
+										<span class="input-group-btn">
+											<a href="#" class="btn btn-primary js_subscribe_btn o_default_snippet_text hidden" style="position: relative; overflow: hidden;" data-original-title="" title="" disabled="disabled"><span class="avant-ripple" style="height: 88px; width: 88px; top: -34px; left: 40px;"/>Subscribe</a>
+											<a href="#" class="js_subscribed_btn btn btn-primary" disabled="disabled" style="position: relative; overflow: hidden;" data-original-title="" title="">Subscribe</a>
+										</span>
+										<div class="alert alert-success hidden o_default_snippet_text">Thanks for your subscription!</div>
+									</div>
+									<p>
+									<font style="font-size: 12px;">You can unsubscribe at any time</font>
+									</p>
+								</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </section>
+	        </div>
+	    </xpath>
+	</template>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>	
+	
+	<template id="inherite_products_item" inherit_id="website_sale.products_item">
+	    <xpath expr="//div[@class='product_price']" position="replace">
+	        <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                    <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span t-if="combination_info['price'] and combination_info['min_price'] == 0.0 and combination_info['max_price'] == 0.0" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>                    
+                    <span t-if="combination_info['min_price']" t-esc="combination_info['min_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <span t-if="combination_info['max_price'] and combination_info['max_price']" >-</span>
+                    <span t-if="combination_info['max_price']" t-esc="combination_info['max_price']" />
+                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                </div>
+	    </xpath>
+	    
+	    <xpath expr="//div[@class='card-body p-1 oe_product_image']" position="replace">
+	    	<t t-if="product.sudo().qty_available &lt;= 0">
+	            <div class="card-body p-1 oe_product_image" style="opacity:0.5;">
+	                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+	                <t t-if="product.sudo().qty_available &lt;= 0"><div class="text-center special-ribbon-red special-ribbon-banner-red " style='color:red;'><strong>Out of Stock</strong></div></t>
+	                <a t-att-href="product_href" class="d-block h-100" itemprop="url" >
+	                    <t t-set="image_holder" t-value="product._get_image_holder()"/>
+	                    <span t-field="image_holder.image_1920"
+	                        t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+	                        class="d-flex h-100 justify-content-center align-items-center"/>
+	                </a>
+	                
+	            </div>
+	         </t>
+            <t t-if="not product.sudo().qty_available &lt;= 0">
+            	<div class="card-body p-1 oe_product_image" >
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <a t-att-href="product_href" class="d-block h-100" itemprop="url" >
+                    <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                    <span t-field="image_holder.image_1920"
+                        t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+                        class="d-flex h-100 justify-content-center align-items-center"/>
+                </a>
+                
+            </div>
+            </t>
+        </xpath>
+	    
+	</template>
+</odoo>

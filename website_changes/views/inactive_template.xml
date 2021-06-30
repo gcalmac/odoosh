@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="website_sale.products_add_to_cart" model="ir.ui.view">
+		<field name="active">False</field>
+	</record>
+	<record id="website_sale.product_custom_text" model="ir.ui.view">
+		<field name="active">False</field>
+	</record>
+</odoo>

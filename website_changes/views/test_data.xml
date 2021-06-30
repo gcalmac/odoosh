@@ -1,0 +1,795 @@
+	<template id="category_cover_page" inherit_id="website_sale.products"  name="Category Cover">
+	<xpath expr="/t/t/div/div[2]" position="before">
+	    <t t-if="category and category.id==1">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Wholesale Cheap Wicker Baskets and Containers</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac sells a wide range of wholesale display and utility baskets in every shape, material and size at unbeatable prices. Find baskets for all of your needs your today!</font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55099" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==228">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Chinese Take Out Boxes</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">These classic Chinese Paper Boxes with wire
+	handles are available in a wide range of solid
+	colors and original everyday and seasonal
+	designs. Select from a large range of in stock
+	designs or have them customized to your needs
+	starting from a low minimum of 5’000 units.</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Available in packs of 25 &amp;nbsp;in 2 standard sizes:</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">1 Pint: 3½" x 3" x 3½"&amp;nbsp;</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">2 Pint: 4½" x 3½" x 3½"<br/></font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55110" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==255">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1 style="color: rgb(0, 0, 0); font-style: normal;">Tissue Paper<br/></h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55113" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==4">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Cellophane Bags, Shrink Bags, Clear Cello Wrap and Gift Basket Wrap</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Looking for cellophane bags wholesale at the best prices? For over 55 years Almac has been a leading cello bag wholesale supplier. </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">We stock a large assortment of bulk cellophane bags, cello treat bags, dome shrink bags, clear gift basket wrap and printed gift basket wrap, colored cellophane wrap and cello bags in all shapes and sizes. If its wholesale gusset bags, cone bags or simple cello bags you're after, you've come to the right place. </font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55112/bags.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==208">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1 style="color: rgb(0, 0, 0); font-style: normal;">Best Seller Baskets, Containers, Boxes and Packaging Accessories</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/19505" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==271">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1 style="color: rgb(0, 0, 0); font-style: normal;">On Sale Baskets, Containers, Boxes and Packaging Accessories</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55104" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==206">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>New Baskets, Containers, Boxes and Packaging Accessories</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/19505" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==266">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1 style="color: rgb(0, 0, 0); font-style: normal;">Halloween Baskets, Containers, Boxes and Packaging Accessories</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55117" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==268">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1 style="color: rgb(0, 0, 0); font-style: normal;">Easter Baskets, Containers, Boxes and Packaging Accessories</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55116" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==267">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1 style="color: rgb(0, 0, 0); font-style: normal;">Valentine's Baskets, Containers, Boxes and Packaging Accessories</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55115" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==265">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Wholesale empty Christmas Baskets and Containers, Boxes, Christmas Packaging and Gourmet Food</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">For over 55 years, Almac Imports has been a leading Christmas wholesale supplier, designing and distributing empty Christmas baskets, Christmas gift boxes, Christmas gift packaging, Christmas buckets,tins and metal containers and Christmas containers for flowers.
+	In addition to our Christmas containers we also sell a wide range of premium Belgian and French Christmas chocolate and gourmet food at wholesale prices. So if your're looking for Christmas wholesale suppliers, you've come to the right place for all of your packaging, display and gift giving needs. </font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55114/christmas.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==242">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Crinkle Cut and Fine Cut Shred</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""> Looking to give your presentation a touch of class &amp;nbsp;without breaking the bank? &amp;nbsp;Almac sells a wide range of Crinkle Cut, Very Fine Cut and wood excelsior shred in a range of colors, styles, blends and materials. You are sure to find a color that suits your presentation.&amp;nbsp;</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Read our blog post the <a href="/blog/the-reading-basket-1/post/the-scoop-on-shred-177">Scoop on Shred</a> for innovative ways to package and decorate with shred.<br/></font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55111" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==235">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Bows and Ribbons Wholesale</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Looking for ribbons and bows at wholesale prices? You've come to the right place. Almac Imports stocks a wide range of wholeale bows and wholesale ribbon in a large range of colors and sizes. Whether you are looking for bulk Christmas bows, raffia ribbon wholesale, metallic and satin curling ribbon or pull bows in bulk we are sure to have what you are looking for.</font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55109/bow.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==197">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Sleighs</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="mb0 mt32 col-md-6">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55107" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==196">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Metal Wholesale Baskets and Containers</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Looking for metal wholesale containers, metal tins for creating gift baskets or metal baskets with handles?
+	</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac has been designing, importing and distributing a large range of bulk metal tins, round metal baskets, oval metal baskets, large metal containers, metal wire baskets and cheap metal containers to suit all of your gifting and dispaly requirements. </font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55106/metal.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==195">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Faux Leather Containers</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Need a particular faux leather wholesale basket, faux leather box or faux leather storage container?
+	Almac Imports sells a wide range of premium faux leather wholesale containers in a wide variety of shapes, sizes and colors. </font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55105/Faux.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==200">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Baby Baskets </h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""/>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55108" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==201">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Cheap Picnic Baskets</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac Imports is the answer to the following question. Where to buy picnic baskets? For over 55 years we have been a
+	leader in having picnic baskets for sale at incredible wholesale prices. We sell willow picnic basket sets, traditional English picnic baskets, empty wicker basket hampers and a wide range of bulk picnic baskets in a range of shapes and styles.</font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55104/picnic.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==192">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Wholesale Display and Utility Wicker Baskets</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac sells a wide range of wholesale display baskets for bakery, display baskets for shops and utility baskets in every shape, material and size at unbeatable prices.&amp;nbsp;</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Be sure to see our comprehensive range of <a href="/shop/category/handle-baskets-2">wholesale wicker handle baskets</a>, <a href="/shop/category/trays-bowls-190">wicker trays and bowls</a> and bulk <a href="/shop/category/plastic-wicker-baskets-193">plastic wicker baskets</a>.</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Find baskets for all of your needs your today!<br/></font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55103/display.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==193">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Plastic Wicker Baskets </h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Our foodSURV Plastic Wicker Baskets are the ideal solution for your food service display needs. They are durable, washable, mold and mildew resistant. Ideal for grocery and supermarket displays. Made from 3mm and 5mm polypropylene solid cord they are tough enough to endure even the most demanding of environments.
+	Available in natural, honey, brown and black, in round, oval, square and rectangular. In sizes ranging from 8" to 26".</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Be sure to check out our comprehensive range of plastic baskets, rectangular wicker baskets, brown wicker baskets, black wicker baskets, <a href="/shop/category/baskets-1">white wicker baskets</a>&amp;nbsp;and round wicker baskets in a wide range of materials.</font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55102" alt="Odoo image and text block" data-original-title="" title="" aria-describedby="tooltip76656"/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==2">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Wicker Baskets with Handles</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Whether you are looking for flower baskets or flower girl baskets, a basket with handle for gift baskets or for your display, Almac Imports stocks a wide selection of wholesale baskets, sold individually or in bulk, at wholesale prices. Looking for traditional wicker, vintage or unique, creative designs we are sure to have a range of baskets to fit your needs. In a wide assortment of materials in willow, wood, seagrass, wire, rush, bamboo and coco-midrib. If it's a <a href="/shop/category/plastic-wicker-baskets-193">plastic basket with handle</a>&amp;nbsp;you need, we have a wide range of sizes.</font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Shapes and colors to fit your presentation, select from our oval, round, rectangular and square styles. </font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55099" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==190">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Wholesale Wicker Trays and Bowls </h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Looking for modern designer wicker trays and bowls, elegant bread baskets or just everyday tableware? We are sure to have what you are looking for at the best wholesale prices. We sell over 300 different wicker products, in a range of materials including willow, wood, seagrass, wire and bamboo. Select from round wicker baskets, oval woven baskets, rectangular or square bulk baskets, with handles or without handles, in a range of colors and styles. No need to buy full sets as we sell all of our items individually too. </font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/55101" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==274">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating s_image_floating pull-right">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19458" alt="Odoo CMS- Sample image floating" data-original-title="" title=""/>
+	                </div>
+	              </div>
+	              <h3>
+	                <font style="font-size: 36px;">Food Service</font>
+	              </h3>
+	              <h4 style="text-align: left; color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style=""> Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac Imports has been serving the food service industry for over 50 years with wicker baskets, boxes and containers. Whether you are looking for stock wicker baskets for buffet or table service, durable, washable plastic wicker baskets or custom containers for yourself or your clients, our skilled team of designers can help you create the perfect product. </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style=""> We work with some of the largest food service business in the world and some of the smallest. </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">We look forward to working with you too. With our worldwide contacts, we also offer a program of direct imports at unbeatable prices.</font>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==275">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating o_margin_l pull-right s_image_floating">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19457" alt="Odoo CMS- Sample image floating"/>
+	                </div>
+	                <div class="o_footer">
+	                  <small class="text-muted">&amp;nbsp;</small>
+	                </div>
+	              </div>
+	              <h3>Supermarkets</h3>
+	              <h4 style="color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style="">Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac Imports has been helping the grocery industry package and display their products for over 50 years. We specialize in display baskets and containers, for bakery and produce departments, handle baskets, trays and bowls and gift baskets for fruit- and seasonal gourmet baskets, as well as floral baskets, metal containers and flower sleeves for the the floral department. </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Be sure to have a look at our comprehensive range of durable, washable plastic wickers baskets ideal for cool and mist environments. </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">We work with single stores and large blue-chip groups and have customized 1000's of products to suit style and budget.</font>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==276">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating o_margin_l pull-right s_image_floating">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19456" alt="Odoo CMS- Sample image floating"/>
+	                </div>
+	                <div class="o_footer">
+	                  <small class="text-muted">&amp;nbsp;</small>
+	                </div>
+	              </div>
+	              <h3>Gift Basket Suppliers</h3>
+	              <h4 style="color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style="">Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">For over 50 years Almac Imports has been working closely with the largest gift basket businesses in North America. We understand the demands of the industry and pride ourselves on our customer service and industry leading processing times. 95% of our orders are shipped out on the same day....and that includes during seasonal peak times.</font>
+	                <font class="text-gray-dark-light" style="">We work with some of the largest food service business in the world and some of the smallest. We look forward to working with you too. With our worldwide contacts, we also offer a program of direct imports at unbeatable price</font>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==199">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating o_margin_l pull-right s_image_floating">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19455" alt="Odoo CMS- Sample image floating"/>
+	                </div>
+	                <div class="o_footer">
+	                  <small class="text-muted">&amp;nbsp;</small>
+	                </div>
+	              </div>
+	              <h3>Floral</h3>
+	              <h4 style="color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style="">Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac Imports works closely with the floral industry designing, importing and distributing planters, wicker baskets and packaging accessories to compliment fresh cut flower and potted plant presentations. We understand the price points of the floral industry and have a wide range of materials and sizes to meet any budget. If you are looking for inexpensive coco midrib baskets, cheap bamboo baskets or luxurious full wicker baskets, we hold a significant quantity of inventory to meet your needs. </font>
+	                <font class="text-gray-dark-light" style="">With our worldwide contacts, we also offer a program of direct imports at unbeatable prices.</font>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==223">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating o_margin_l pull-right s_image_floating">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19454" alt="Odoo CMS- Sample image floating"/>
+	                </div>
+	                <div class="o_footer">
+	                  <small class="text-muted">&amp;nbsp;</small>
+	                </div>
+	              </div>
+	              <h3>Bakery and Deli</h3>
+	              <h4 style="color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style="">Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac Imports works with bakery chains and independent stores providing them with baskets and containers for bread, cake and pastry display and packaging, clear cello bags for packaging their baked goods and baskets for their gourmet gifts. In addition we supply a comprehensive range of stock and printed bakery and cupcake boxes and cake boards in a host of thicknesses, materials and shapes. </font>
+	                <font class="text-gray-dark-light" style="">With our worldwide contacts, we also offer a program of direct imports at unbeatable prices.</font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mt32 mb0">
+	              <br/>
+	              <u>Clients Include:</u>
+	              <img class="center-block img img-responsive mb16" src="/web/image/19499" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==279">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating o_margin_l pull-right s_image_floating">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19453" alt="Odoo CMS- Sample image floating"/>
+	                </div>
+	                <div class="o_footer">
+	                  <small class="text-muted">&amp;nbsp;</small>
+	                </div>
+	              </div>
+	              <h3>Chocolate</h3>
+	              <h4 style="color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style="">Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Working closely with both large multi-nationals as well as small independent chocolatiers, Almac Imports designs and distributes a wide range of products for the chocolate industry. Whether you are looking for clear boxes and cello packaging, ornate gift boxes in a myriad of shapes, designs and sizes, elegant metal containers or luxurious faux leather containers we have what you need to showcase your creations.</font>
+	                <font class="text-gray-dark-light" style="">If we don't have exactly what you are looking for in stock, we can design and customize the perfect product for you.</font>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==281">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating o_margin_l pull-right s_image_floating">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19451" alt="Odoo CMS- Sample image floating"/>
+	                </div>
+	                <div class="o_footer">
+	                  <small class="text-muted">&amp;nbsp;</small>
+	                </div>
+	              </div>
+	              <h3>Restaurants</h3>
+	              <h4 style="color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style="">Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Working with some of the world's leading brands, Almac Imports has been supplying table service and buffet service wicker baskets, containers and gift basket supplies for over 50 years. From a wide range of bread baskets, to our FoodSurv range of durable, washable plastic wicker baskets we are certain to have products in stock to suit your needs. If you have custom requirements we'll work with you to design and manufacture the perfect made-to-measure product. </font>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==280">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="mt64 col-md-5 col-md-offset-1 mb8">
+	              <div class="o_image_floating o_margin_l pull-right s_image_floating">
+	                <div class="o_container">
+	                  <img class="img img-rounded img-responsive" src="/web/image/19452" alt="Odoo CMS- Sample image floating"/>
+	                </div>
+	                <div class="o_footer">
+	                  <small class="text-muted">&amp;nbsp;</small>
+	                </div>
+	              </div>
+	              <h3>Hotels</h3>
+	              <h4 style="color: rgb(255, 255, 255); font-style: normal;">
+	                <font class="text-gray-dark-light" style="">Baskets, Boxes &amp;amp; Packaging Accessories</font>
+	              </h4>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac Imports works with the lodging industry providing baskets and containers for room and bathroom display, buffet ware for restaurants and halls as well as table service baskets. In addition, we are frequently called on for wicker baskets and containers for wedding receptions, gift boxes for party favors and bonbonnieres and floral baskets for centerpieces.</font>
+	                <font class="text-gray-dark-light" style="">With our worldwide contacts, we also offer a program of direct imports at unbeatable prices.</font>
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==210">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Gift Boxes Wholesale</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Looking for gift boxes wholesale? For over 55 years Almac has been designing and distributing a wide range of empty gift boxes in hundreds of shapes, sizes and materials. If you are looking for a single basket box, cardboard gift baskets or 1000s of gift basket boxes we have that. With a wide range of gift boxes for sale in a host of everyday and seasonal designs we are sure to have what you are looking for. We stock a comprehensive selection of Boxco gift boxes, clear gift boxes, Chinese Take Out Boxes, sweet presentation boxes, bulk gable boxes, wholesale chocolate boxes and gourmet food boxes, to name a few.</font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/77395/20177a.jpg" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	    <t t-if="category and category.id==212">
+	      <section class="s_image_text">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-md-5 col-md-offset-1 mb8 mt64">
+	              <h1>Gift Basket Boxes</h1>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">
+	                  <br/>
+	                </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Almac is a leading supplier of wholesale gift basket boxes. With 100s of styles, colors and designs updated for every season. Our gift boxes for sale are made of sturdy cardboard that hold up to 10 pounds of weight in the large boxes and 3 pounds of weight in the small basket boxes. They are made of 50% recycled paper, 15% post consumer and can be recycled. </font>
+	              </p>
+	              <p style="color: rgb(255, 255, 255);">
+	                <font class="text-gray-dark-light" style="">Need to know how to assemble a gift basket box, see the <a href="https://www.youtube.com/watch?v=l6HW1I9W7M8&amp;feature=youtu.be">assembly video here</a>.</font>
+	              </p>
+	            </div>
+	            <div class="col-md-6 mb0 mt32">
+	              <img class="center-block img img-responsive mb16" src="/web/image/59979/419_ChristmasWishes_BBFeature.png" alt="Odoo image and text block" data-original-title="" title=""/>
+	            </div>
+	          </div>
+	        </div>
+	      </section>
+	    </t>
+	  </xpath>	
+	</template>
+	

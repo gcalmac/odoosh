@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<template id="website_sale_product_description" inherit_id="website_sale.product">
+		<xpath expr="//div[@id='product_attributes_simple']" position="replace"/>
+		<xpath expr="//div[@class='row'][2]" position="after">
+			<div itemprop="product_offer_section" class="oe_structure mt16" id="product_offer_section">
+				<section class="s_image_text bg-gray-lighter">
+					<div class="container" >
+						<div class="row" style="margin-left:20px;">
+							<div class="mt64 mb64 col-md-6">
+								<h3>Description</h3>
+								<div id="product_attributes_simple">
+                                    <p>
+                                        <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
+                                        <t t-foreach="single_value_attributes" t-as="attribute">
+                                            <span t-field="attribute.name"/>:
+                                            <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
+                                                <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
+                                            </t>
+                                            <br/>
+                                        </t>
+                                    </p>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</xpath>
+	</template>
+
+</odoo>

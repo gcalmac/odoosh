@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="frontend_layout" name="Main Frontend Layout" inherit_id="web.frontend_layout">
+		<xpath expr="//div[@id='wrapwrap']/header" position="before">
+			<div id="pre-header" class="clearfix" style="display: block;">
+				<span class="pull-right">
+					<a href="mailto:sales@almacltd.com" style="margin-right:20px;">sales@almacltd.com</a>
+					<a style="margin-right:20px;">(844) 922 5622</a>
+				</span>
+			</div>
+		</xpath>
+	</template>
+</odoo>

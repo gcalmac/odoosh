@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="website.videos">
+		<t t-call="website.layout">
+			<div id="wrap" class="oe_structure oe_empty">
+				<section class="s_text_block pt32 pb32 o_colored_level" data-snippet="s_text_block" data-name="Text">
+					<div class="s_allow_columns container">
+						<h1 style="text-align: center; ">
+							<span style="color: rgb(0, 0, 0); font-family: sans-serif; font-size: 42px; letter-spacing: -0.84px; word-spacing: 2.1px;">Almac Imports Videos</span>
+							<br/>
+						</h1>
+						<p>
+							<br/>
+						</p>
+					</div>
+				</section>
+				<section class="s_media_list bg-200 pt32 pb32 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List" style="">
+					<div class="container">
+						<div class="row s_nb_column_fixed s_col_no_bgcolor">
+							<div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+								<div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_cc o_cc1 o_colored_level" style="">
+									<div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+										<div class="media_iframe_video s_media_list_img h-100 w-100" data-oe-expression="//www.youtube.com/embed/0GT74gPBEJA?autoplay=0&amp;rel=0">
+											<div class="css_editable_mode_display">&amp;nbsp;</div>
+											<div class="media_iframe_video_size">&amp;nbsp;</div>
+											<iframe src="//www.youtube.com/embed/0GT74gPBEJA?autoplay=0&amp;rel=0" frameborder="0" allowfullscreen="allowfullscreen"/>
+										</div>
+									</div>
+									<div class="s_media_list_body col-lg-6">
+										<h2 style="font-family: sans-serif; font-weight: inherit; line-height: 1.1; color: rgb(0, 0, 0); margin-top: 20px; margin-bottom: 10px; font-size: 30px; letter-spacing: -0.02em; word-spacing: 0.05em;">Get to know Almac Imports</h2>
+											<p>
+												<span style="color: rgb(0, 0, 0); font-family: sans-serif;">A quick 2 min 17s video explaining who we are and what makes us different.</span>
+												<br/>
+											</p>
+											<a href="https://www.youtube.com/watch?v=ZBxNzzzjwGs" class="mb-2 btn btn-primary" data-original-title="" title="" aria-describedby="tooltip853544">
+												<b data-original-title="" title="" aria-describedby="tooltip468961">View on Youtube</b>
+											</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+								<div class="row s_col_no_resize s_col_no_bgcolor no-gutters o_cc o_cc1 o_colored_level align-items-center">
+									<div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+										<div class="media_iframe_video s_media_list_img h-100 w-100" data-oe-expression="//www.youtube.com/embed/ZBxNzzzjwGs?autoplay=0&amp;rel=0">
+											<div class="css_editable_mode_display">&amp;nbsp;</div>
+											<div class="media_iframe_video_size">&amp;nbsp;</div>
+											<iframe src="//www.youtube.com/embed/ZBxNzzzjwGs?autoplay=0&amp;rel=0" frameborder="0" allowfullscreen="allowfullscreen"/>
+										</div>
+									</div>
+									<div class="s_media_list_body col-lg-6">
+										<h2 style="font-family: sans-serif; font-weight: inherit; line-height: 1.1; color: rgb(0, 0, 0); margin-top: 20px; margin-bottom: 10px; font-size: 30px; letter-spacing: -0.02em; word-spacing: 0.05em;">How we measure our baskets</h2>
+										<h2 style="font-family: sans-serif; line-height: 1.1; color: rgb(0, 0, 0); margin-top: 20px; margin-bottom: 10px; font-size: 30px; letter-spacing: -0.02em; word-spacing: 0.05em;"/>
+										<p style="font-weight: inherit; color: rgb(56, 56, 56); font-family: Heebo, &quot;Odoo Unicode Support Noto&quot;, sans-serif; font-size: 14px; letter-spacing: normal; word-spacing: 0px;">
+											<span style="color: rgb(0, 0, 0); font-family: sans-serif;">1 min 45s gives you a quick overview of how we measure our baskets and what our dimensions mean</span>
+											<br/>
+										</p>
+										<a href="https://youtu.be/ZBxNzzzjwGs" class="mb-2 btn btn-primary" data-original-title="" title="" aria-describedby="tooltip853544" style="font-size: 14px; letter-spacing: normal; word-spacing: 0px;">
+											<b>View on Youtube</b>
+										</a>
+										<br/>
+										<p>
+											<br/>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+								<div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_cc o_cc1 o_colored_level" style="">
+									<div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+										<div class="media_iframe_video s_media_list_img h-100 w-100" data-oe-expression="//www.youtube.com/embed/oRzDnh-WE0A?autoplay=0&amp;rel=0">
+											<div class="css_editable_mode_display">&amp;nbsp;</div>
+											<div class="media_iframe_video_size">&amp;nbsp;</div>
+											<iframe src="//www.youtube.com/embed/oRzDnh-WE0A?autoplay=0&amp;rel=0" frameborder="0" allowfullscreen="allowfullscreen"/>
+										</div>
+									</div>
+									<div class="s_media_list_body col-lg-6">
+										<h2 style="font-family: sans-serif; font-weight: inherit; line-height: 1.1; color: rgb(0, 0, 0); margin-top: 20px; margin-bottom: 10px; font-size: 30px; letter-spacing: -0.02em; word-spacing: 0.05em;">Understand our shipping costs</h2>
+										<p style="font-family: Heebo, &quot;Odoo Unicode Support Noto&quot;, sans-serif; font-size: 14px;">
+											<span style="color: rgb(0, 0, 0); font-family: sans-serif;">View this 1 min 50s video explaining how we price our shipping and where to get your shipping quote</span>
+											<br/>
+										</p>
+										<a href="https://youtu.be/oRzDnh-WE0A" class="mb-2 btn btn-primary" data-original-title="" title="" aria-describedby="tooltip853544" style="font-size: 14px;">View on Youtube</a>
+										<br/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</t>
+	</template>
+</odoo>
