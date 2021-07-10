@@ -1,31 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+	<template id="suggested_products_list_change" inherit_id="website_sale.suggested_products_list">
+		<xpath expr="//h5[@class='text-muted js_cart_lines']" position="replace">
+			<h5 class='text-muted js_cart_lines' t-if="suggested_products">Suggested Products:</h5>
+		</xpath>
+	</template>
+	
 	<template id="website_sale_product_description" inherit_id="website_sale.product">
 		<xpath expr="//div[@id='product_attributes_simple']" position="replace"/>
 		<xpath expr="//div[@class='row'][2]" position="after">
 			<div itemprop="product_offer_section" class="oe_structure mt16" id="product_offer_section">
 				<section class="s_image_text bg-gray-lighter">
 					<div class="container" >
-						<div class="row" style="margin-left:20px;">
-							<div class="mt64 mb64 col-md-6">
+						<div class="row" style="margin-left:20px; font-size:14px;">
+							<div class="mt32 mb64 col-md-6">
 								<h3>Description</h3>
-								<div id="product_attributes_simple">
-                                    <p>
-                                        <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
-                                        <t t-foreach="single_value_attributes" t-as="attribute">
-                                            <span t-field="attribute.name"/>:
-                                            <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
-                                                <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
-                                            </t>
-                                            <br/>
-                                        </t>
+								<p style="margin-bottom:10px;">
+									<t t-if="product.x_sku">
+										<span t-field="product.x_sku"/> - <span t-field="product.name"/>
+									</t>
+									<t t-else="">
+										<span t-field="product.name"/>
+									</t>
+								</p>
+                            	<t t-foreach="product.product_variant_ids" t-as="variant">
+                            		<t t-set="product_description_list" t-value="variant._get_product_description_list()"/>
+                            		<p style="margin-bottom:10px;"><t t-esc="product_description_list"/></p>
+                            	</t>
+                                <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
+                                <t t-foreach="single_value_attributes" t-as="attribute">
+                                    <p style="margin-bottom:10px;">
+	                                	<span t-field="attribute.name"/>:
+	                                    <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
+	                                        <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
+	                                    </t>
                                     </p>
-                                </div>
+                                </t>
+                            </div>
+							<div class="mt32 mb0 col-md-4 col-md-offset-1">
+								<h3>Wholesale Pricing</h3>
+								<p>Buy in bulk and save!</p>
+								<!-- Product Variant SKU -->
+                            	<t t-foreach="product.product_variant_ids" t-as="variant">
+                            		<p style="margin-bottom:10px;">
+	                            		<span>Item:</span>
+	                            		<span t-field="variant.default_code"/>
+	                            		<br/>
+	                            		<t t-set="product_wholesale_list" t-value="variant._get_product_pricelist_item(pricelist=pricelist)"/>
+	                            		<t t-foreach="product_wholesale_list" t-as="wholesale_data">
+	                            			<p style="margin-bottom:10px;" t-esc="wholesale_data"/>
+	                            		</t>
+                            		</p>
+                            		<br/>
+                            	</t>
 							</div>
 						</div>
 					</div>
 				</section>
+			</div>
+			<div style="margin-top:20px">
+				<t t-set="suggested_products" t-value="product.get_suggested_product_list()"/>
+				<h5 class='text-muted' t-if="suggested_products">Suggested Products:</h5>
+				<table t-if="suggested_products" id="suggested_products" class="js_cart_lines table table-striped table-sm">
+					<tbody>
+						<tr t-foreach="suggested_products" t-as="product">
+							<t t-set="combination_info" t-value="product._get_combination_info_variant(pricelist=pricelist)"/>
+							<td class='td-img text-center'>
+	                            <a t-att-href="product.website_url">
+	                                <span t-field="product.image_128" t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'rounded o_image_64_max'}" />
+	                            </a>
+	                        </td>
+	                        <td class='td-product_name'>
+	                            <div>
+	                                <a t-att-href="product.website_url">
+	                                    <strong t-esc="combination_info['display_name']" />
+	                                </a>
+	                            </div>
+	                            <div class="text-muted d-none d-md-block" t-field="product.description_sale" />
+	                        </td>
+	                        <td class='td-price'>
+	                            <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+			                    <span t-if="combination_info['price'] and combination_info['min_price'] == 0.0 and combination_info['max_price'] == 0.0" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>                    
+			                    <span t-if="combination_info['min_price']" t-esc="combination_info['min_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+			                    <span t-if="combination_info['max_price'] and combination_info['max_price']" >-</span>
+			                    <span t-if="combination_info['max_price']" t-esc="combination_info['max_price']" />
+			                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+			                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+	                        </td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</xpath>
 	</template>
