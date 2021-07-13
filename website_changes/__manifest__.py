@@ -5,7 +5,7 @@
     'author': "Evozard",
     'website': "http://evozard.com/",    
     'version': '1.0',            
-    'depends': ['website','website_sale'],
+    'depends': ['website_sale'],
     'data': [
         'views/assets.xml',
         'views/video_change.xml',
@@ -14,6 +14,7 @@
         'views/inactive_template.xml',
         'views/product_description.xml',
     ],
+    'qweb': ['static/src/xml/website_sale_recently_viewed_extend.xml'],
     'auto_install': False,
     'installable': True,
     'application':True,

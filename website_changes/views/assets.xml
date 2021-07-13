@@ -4,5 +4,9 @@
 	    <xpath expr="//link[last()]" position="after">
 			<link rel="stylesheet" type="text/scss" href="/website_changes/static/src/scss/website_changes.scss"/>
 		</xpath>
+		
+		<xpath expr="script[last()]" position="after">
+			<script type="text/javascript" src="/website_changes/static/src/js/website_changes.js"></script> 
+		</xpath>
 	</template>		
 </odoo>

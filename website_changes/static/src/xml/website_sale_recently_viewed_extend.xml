@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-extend="website_sale.productsRecentlyViewed">
+	    <t t-jquery="div.o_carousel_product_card_body" t-operation="replace">
+			<div class="o_carousel_product_card_body card-body">	
+				<a t-att-href="product.website_url" class="text-decoration-none">
+				    <h6 class="card-title mb-0 text-truncate" t-raw="product.display_name"/>
+				</a>
+				<t t-if="product.rating" t-raw="product.rating"/>
+			</div>	    	
+	    </t>	
+	</t>
+		 
+</templates>
