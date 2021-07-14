@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- We need to remove grid from Product Images which displays in Product Detail page under the main product image. -->	
+	<template id="shop_product_carousel_inherit" inherit_id="website_sale.shop_product_carousel"> 
+		<xpath expr="//ol[hasclass('carousel-indicators')]/t/li" position="attributes">
+			<attribute name="style">border:none;</attribute>
+		</xpath>
+	</template>
+</odoo>

@@ -13,6 +13,7 @@
         'views/footer_template.xml',
         'views/inactive_template.xml',
         'views/product_description.xml',
+        'views/website_sale_templates.xml',
     ],
     'qweb': ['static/src/xml/website_sale_recently_viewed_extend.xml'],
     'auto_install': False,
